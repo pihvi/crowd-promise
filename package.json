@@ -1,12 +1,13 @@
 {
-  "name": "crowd",
+  "name": "crowd-promise",
+  "description": "Crowd user authentication Promise wrapper",
+  "keywords": ["crowd", "promise", "q", "authenticate"],
+  "author": "Antti Mattila <pihvi@live.com>",
+  "repository": "git://github.com/pihvi/crowd-promise",
   "version": "0.0.1",
+  "main": "./crowd-promise.js",
   "dependencies": {
     "atlassian-crowd": "0.4.3",
     "q": "0.9.2"
-  },
-  "engines": {
-    "node": "0.8.8",
-    "npm": "1.2.15"
   }
 }

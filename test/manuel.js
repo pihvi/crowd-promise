@@ -2,8 +2,8 @@ var corwdBaseURL = process.env.CROWD_BASE_URL || 'https://url.to.your.crowd.exam
 var crowdAppName = process.env.CROWD_APP_NAME || 'this-apps-crowd-name'
 var crowdAppPwd = process.env.CROWD_APP_PASSWORD || 'this-apps-crowd-password'
 
-var CrowdClient = require('./crowd-client')
-var crowd = new CrowdClient(corwdBaseURL, crowdAppName, crowdAppPwd)
+var CrowdPromise = require('../crowd-promise')
+var crowd = new CrowdPromise(corwdBaseURL, crowdAppName, crowdAppPwd)
 
 var username = process.env.CROWD_USERNAME || 'john'
 var password = process.env.CROWD_USER_PASSWORD || 'password1'
