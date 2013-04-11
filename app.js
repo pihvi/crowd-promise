@@ -28,14 +28,14 @@ console.log('Missiles away!')
 function callbackFullSolution() {
   crowd.authenticate(username, password, function(err, res) {
     if (err) console.log('Callback-full error:', err)
-    else console.log('Callback-full result:', res)
+    else console.log('Callback-full result:', res.email)
   })
 }
 
 function promiseFullSolution() {
   var promise = crowd.authenticate(username, password)
   promise.then(function(res) {
-    console.log('Promise-full result:', res)
+    console.log('Promise-full result:', res.email)
   }, function(err) {
     console.log('Promise-full error:', err)
   })
@@ -43,12 +43,12 @@ function promiseFullSolution() {
 
 function callbackHappyPath() {
   crowd.authenticate(username, password, function(err, res) {
-    console.log('Callback-happy result:', res)
+    console.log('Callback-happy result:', res.email)
   })
 }
 
 function promiseHappyPath() {
   crowd.authenticate(username, password).then(function(res) {
-    console.log('Promise-happy result:', res)
+    console.log('Promise-happy result:', res.email)
   })
 }
