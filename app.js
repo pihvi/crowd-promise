@@ -8,18 +8,44 @@ var crowd = new CrowdClient(corwdBaseURL, crowdAppName, crowdAppPwd)
 var username = process.env.CROWD_USERNAME || 'john'
 var password = process.env.CROWD_USER_PASSWORD || 'password1'
 
-console.log('Starting authentication with callback..')
-crowd.authenticate(username, password, function(err, res) {
-  if (err) console.log('Callback error:', err)
-  else console.log('Callback result:', res)
-})
-
-console.log('Starting authentication with promise..')
-var promise = crowd.authenticate(username, password)
-promise.then(function(res) {
-  console.log('Promise result:', res)
-}, function(err) {
-  console.log('Promise error:', err)
-})
-
+var withErrorHandling = false
+if (withErrorHandling) {
+  console.log('Starting authentication with callback-full..')
+  callbackFullSolution()
+  console.log('Starting authentication with promise-full..')
+  promiseFullSolution()
+} else {
+  console.log('Starting authentication with callback-happy..')
+  callbackHappyPath()
+  console.log('Starting authentication with promise-happy..')
+  promiseHappyPath()
+}
 console.log('Missiles away!')
+
+function callbackFullSolution() {
+  crowd.authenticate(username, password, function(err, res) {
+    if (err) console.log('Callback-full error:', err)
+    else console.log('Callback-full result:', res)
+  })
+}
+
+function promiseFullSolution() {
+  var promise = crowd.authenticate(username, password)
+  promise.then(function(res) {
+    console.log('Promise-full result:', res)
+  }, function(err) {
+    console.log('Promise-full error:', err)
+  })
+}
+
+function callbackHappyPath() {
+  crowd.authenticate(username, password, function(err, res) {
+    console.log('Callback-happy result:', res)
+  })
+}
+
+function promiseHappyPath() {
+  crowd.authenticate(username, password).then(function(res) {
+    console.log('Promise-happy result:', res)
+  })
+}
