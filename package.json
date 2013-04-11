@@ -6,6 +6,7 @@
   "repository": "git://github.com/pihvi/crowd-promise",
   "version": "0.0.1",
   "main": "./crowd-promise.js",
+  "license": "Apache 2.0",
   "dependencies": {
     "atlassian-crowd": "0.4.3",
     "q": "0.9.2"
