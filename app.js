@@ -8,13 +8,16 @@ var crowd = new CrowdClient(corwdBaseURL, crowdAppName, crowdAppPwd)
 var username = process.env.CROWD_USERNAME || 'john'
 var password = process.env.CROWD_USER_PASSWORD || 'password1'
 
-var withErrorHandling = false
+var withErrorHandling = true
+var withJustHappyPath = true
+
 if (withErrorHandling) {
   console.log('Starting authentication with callback-full..')
   callbackFullSolution()
   console.log('Starting authentication with promise-full..')
   promiseFullSolution()
-} else {
+}
+if (withJustHappyPath) {
   console.log('Starting authentication with callback-happy..')
   callbackHappyPath()
   console.log('Starting authentication with promise-happy..')
