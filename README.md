@@ -1,6 +1,8 @@
 A node.js module for authenticating user against Atlassian Crowd wrapped in a Promise.
 
 ## Usage ##
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/pihvi/crowd-promise.svg)](https://greenkeeper.io/)
 ```javascript
   var CrowdPromise = require('crowd-promise')
   var crowd = new CrowdPromise(corwdBaseURL, crowdAppName, crowdAppPwd)
